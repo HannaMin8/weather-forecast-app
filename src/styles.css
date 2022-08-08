@@ -14,6 +14,9 @@ ul {
 li {
   list-style: none;
 }
+li:first-letter {
+  text-transform: capitalize;
+}
 .weather-app {
   background-color: #d0e8f7;
   border: 1px solid #1f4869;
@@ -96,4 +99,14 @@ h1 {
   font-weight: 400;
   font-size: 16px;
   line-height: 30px;
+}
+.temperature {
+  display: flex;
+  flex-direction: column;
+  margin: -17px 0 0 0px;
+  line-height: 30px;
+}
+
+.tempText {
+  font-size: 16px;
 }
