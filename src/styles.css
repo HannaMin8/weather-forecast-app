@@ -1,0 +1,99 @@
+body {
+  font-family: "Shadows Into Light", cursive;
+  font-family: "Splash", cursive;
+  margin: 0px 30px;
+  padding: 10px 10px;
+}
+h1 {
+  font-size: 55px;
+}
+ul {
+  margin: 20px 0 20px;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+.weather-app {
+  background-color: #d0e8f7;
+  border: 1px solid #1f4869;
+  border-radius: 10px;
+  padding: 20px 20px;
+  margin: 10px auto;
+  max-width: 1000px;
+  width: 80%;
+  height: 600px;
+}
+.temp-and-sing {
+  color: #0c3d64;
+  opacity: 2;
+  font-weight: bold;
+  font-size: 49px;
+  line-height: 1em;
+}
+.temp-and-sing .units {
+  position: relative;
+  font-size: 16px;
+  top: -25px;
+}
+.humidity-and-wind {
+  color: #0c3d64;
+  opacity: 0.8;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 1em;
+  padding-left: 30%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 5px;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-sizing: content-box;
+  width: 60%;
+  text-align: left;
+}
+
+.btn.btn-primary {
+  margin-inline: 10px;
+  background-color: #b9cad4;
+  color: black;
+  border: 2px solid #1f4869;
+  transition: all 200ms ease;
+  width: 40%;
+}
+h1 {
+  color: #4f4f5e;
+}
+.grid {
+  display: flex;
+  flex-direction: row;
+}
+.day {
+  padding: 0px 0px;
+  margin: 30px 30px;
+  color: #b9cad4;
+  opacity: 5;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: normal;
+}
+.weather-image {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0 0 -10px;
+  width: 50%;
+}
+.active {
+  color: yellow;
+}
+
+.github-link {
+  text-align: center;
+  display: block;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 30px;
+}
