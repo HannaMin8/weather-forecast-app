@@ -3,8 +3,139 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/26b42b9aa1.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>weather forecast</title>
   </head>
-  <body></body>
+  <body>
+    <form id="search-form">
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter a city"
+          id="city-input"
+        />
+        <button type="submit" class="btn btn-primary">SEARCH</button>
+        <button class="btn btn-primary" id="current-location">
+          Current Location
+        </button>
+      </div>
+    </form>
+    <div class="container">
+      <div class="weather-app">
+        <h1 id="city">Copenhagen</h1>
+        <h2>
+          <span id="date"></span>
+        </h2>
+        <div class="row">
+          <div class="col-6">
+            <ul class="temp-and-sing">
+              <li>
+                <span id="temp">22</span>
+                <span>
+                  <a href="#" class="celsius">°C</a>|<a
+                    href="#"
+                    class="fahrenheit"
+                    >°F</a
+                  >
+                </span>
+              </li>
+              <li id="description">Clouds</li>
+              <li>
+                <img
+                  src="img/clouds.png"
+                  alt="weather-image"
+                  class="weather-image"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <ul class="humidity-and-wind">
+              <li>
+                Humidity:
+                <span id="humidity"> 88</span>%
+              </li>
+              <li>
+                Wind:
+                <span id="wind">9</span>km/h
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="day">
+            Sat
+            <br />
+            <i class="fa-solid fa-sun"></i>
+            <br />
+            22°C
+          </div>
+          <div class="day">
+            Sun
+            <br />
+            <i class="fa-solid fa-cloud-sun-rain"></i>
+            <br />
+            20°C
+          </div>
+          <div class="day">
+            Mon
+            <br />
+            <i class="fa-solid fa-cloud-sun"></i>
+            <br />
+            21°C
+          </div>
+          <div class="day">
+            Tue
+            <br />
+            <i class="fa-solid fa-cloud-sun-rain"></i>
+            <br />
+            22°C
+          </div>
+          <div class="day">
+            Wed
+            <br />
+            <i class="fa-solid fa-sun"></i>
+            <br />
+            25°C
+            <br />
+          </div>
+          <div class="day">
+            Thu
+            <br />
+            <i class="fa-solid fa-sun"></i>
+            <br />
+            22°C
+          </div>
+        </div>
+      </div>
+      <footer class="github-link">
+        <a
+          href="https://github.com/HannaMin8/weather-forecast-app"
+          target="_blank"
+          >Open-source code,</a
+        >
+        <span>by Hanna Minovska</span>
+      </footer>
+      <script src="src/index.js"></script>
+    </div>
+  </body>
 </html>
