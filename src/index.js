@@ -30,9 +30,12 @@ function showData(response) {
   let descriptionElement = document.querySelector("#description");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
+
+  celsiusTemperature = response.data.main.temp;
+  feelsCelsiusTemperature = response.data.main.feels_like;
   cityElement.innerHTML = response.data.name;
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
-  feelsTemp.innerHTML = Math.round(response.data.main.feels_like);
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  feelsTemp.innerHTML = Math.round(feelsCelsiusTemperature);
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -71,5 +74,45 @@ function currentLocation(event) {
   navigator.geolocation.getCurrentPosition(currentData);
 }
 
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 22;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+function displayFeelsFahrenheitTemperature(event) {
+  event.preventDefault();
+  let feelsTemp = document.querySelector("#feelsTemp");
+  let feelsFahrenheitTemperature = (feelsCelsiusTemperature * 9) / 5 + 22;
+  feelsTemp.innerHTML = Math.round(feelsFahrenheitTemperature);
+}
+function displayFeelsCelsiusTemperature(event) {
+  event.preventDefault();
+  let feelsTemp = document.querySelector("#feelsTemp");
+  feelsTemp.innerHTML = Math.round(feelsCelsiusTemperature);
+}
+
 let current = document.querySelector("#current-location");
 current.addEventListener("click", currentLocation);
+
+let celsiusTemperature = null;
+let feelsCelsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+let feelsFahrenheitLink = document.querySelector("#feels-fahrenheit");
+feelsFahrenheitLink.addEventListener(
+  "click",
+  displayFeelsFahrenheitTemperature
+);
+let feelsCelsiusLink = document.querySelector("#feels-celsius");
+feelsCelsiusLink.addEventListener("click", displayFeelsCelsiusTemperature);
