@@ -77,11 +77,17 @@ function currentLocation(event) {
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temp");
+
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 22;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 function displayCelsiusTemperature(event) {
   event.preventDefault();
+
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector("#temp");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
@@ -89,11 +95,17 @@ function displayCelsiusTemperature(event) {
 function displayFeelsFahrenheitTemperature(event) {
   event.preventDefault();
   let feelsTemp = document.querySelector("#feelsTemp");
+
+  feelsCelsiusLink.classList.remove("active");
+  feelsFahrenheitLink.classList.add("active");
   let feelsFahrenheitTemperature = (feelsCelsiusTemperature * 9) / 5 + 22;
   feelsTemp.innerHTML = Math.round(feelsFahrenheitTemperature);
 }
 function displayFeelsCelsiusTemperature(event) {
   event.preventDefault();
+
+  feelsCelsiusLink.classList.add("active");
+  feelsFahrenheitLink.classList.remove("active");
   let feelsTemp = document.querySelector("#feelsTemp");
   feelsTemp.innerHTML = Math.round(feelsCelsiusTemperature);
 }

@@ -111,3 +111,12 @@ h1 {
 .tempText {
   font-size: 16px;
 }
+
+.temperature .active {
+  color: #1f4869;
+  cursor: default;
+}
+
+.temperature .active:hover {
+  text-decoration: none;
+}
