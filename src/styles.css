@@ -6,6 +6,7 @@ body {
 }
 h1 {
   font-size: 55px;
+  color: #4f4f5e;
 }
 ul {
   margin: 20px 0 20px;
@@ -67,9 +68,7 @@ li:first-letter {
   transition: all 200ms ease;
   width: 40%;
 }
-h1 {
-  color: #4f4f5e;
-}
+
 .grid {
   display: flex;
   flex-direction: row;
