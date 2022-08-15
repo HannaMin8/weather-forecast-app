@@ -69,18 +69,23 @@ li:first-letter {
   width: 40%;
 }
 
-.grid {
-  display: flex;
-  flex-direction: row;
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
 }
-.day {
-  padding: 0px 0px;
-  margin: 10px 30px;
-  color: #b9cad4;
+.weather-forecast-date {
+  font-size: 16px;
   opacity: 5;
+  color: #b9cad4;
   font-weight: bold;
   font-size: 30px;
   line-height: normal;
+}
+.weather-forecast-temperature-min {
+  opacity: 0.5;
+}
+.weather-forecast-temperatures {
+  font-size: 13px;
 }
 .weather-image {
   display: flex;
