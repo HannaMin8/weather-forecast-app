@@ -12,18 +12,18 @@ function formatDate(timestamp) {
   ];
   let day = days[date.getDay()];
   let months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
+    "January",
+    "February",
+    "March",
+    "April",
     "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
   let month = months[date.getMonth()];
   return `${day}, ${month}, ${dateToday}`;
@@ -95,6 +95,8 @@ function showData(response) {
   let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#temp");
   let feelsTemp = document.querySelector("#feelsTemp");
+  let tempMax = document.querySelector("#tempMax");
+  let tempMin = document.querySelector("#tempMin");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let descriptionElement = document.querySelector("#description");
@@ -104,9 +106,13 @@ function showData(response) {
 
   celsiusTemperature = response.data.main.temp;
   feelsCelsiusTemperature = response.data.main.feels_like;
+  temperatureMax = response.data.main.temp_max;
+  temperatureMin = response.data.main.temp_min;
   cityElement.innerHTML = response.data.name;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  feelsTemp.innerHTML = Math.round(feelsCelsiusTemperature);
+  feelsTemp.innerHTML = Math.round(temperatureMax);
+  tempMax.innerHTML = Math.round(temperatureMax);
+  tempMin.innerHTML = Math.round(temperatureMin);
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   descriptionElement.innerHTML = response.data.weather[0].description;
