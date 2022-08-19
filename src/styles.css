@@ -37,6 +37,10 @@ li:first-letter {
   width: 80%;
   height: 600px;
 }
+.forecast {
+  margin-right: -150px;
+  margin-top: -35px;
+}
 .temp-and-sing {
   color: #0c3d64;
   opacity: 2;
@@ -77,11 +81,9 @@ li:first-letter {
   transition: all 200ms ease;
   width: 40%;
 }
-.row {
-  margin-top: -10px;
-}
+
 .weather-forecast {
-  margin-top: -20px;
+  margin-top: -40px;
   text-align: center;
 }
 .weather-forecast-date {
