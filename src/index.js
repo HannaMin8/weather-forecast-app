@@ -1,13 +1,6 @@
 function formatDate(timestamp) {
   let date = new Date(timestamp);
-  let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
+  let dateToday = date.getDate();
   let days = [
     "Sunday",
     "Monday",
@@ -18,7 +11,35 @@ function formatDate(timestamp) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  return `${day}, ${hours}:${minutes}`;
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let month = months[date.getMonth()];
+  return `${day}, ${month}, ${dateToday}`;
+}
+
+function formatTime(timestamp) {
+  let time = new Date(timestamp);
+  let hours = time.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = time.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
 }
 
 function formatDay(timestamp) {
@@ -78,6 +99,7 @@ function showData(response) {
   let windElement = document.querySelector("#wind");
   let descriptionElement = document.querySelector("#description");
   let dateElement = document.querySelector("#date");
+  let timeElement = document.querySelector("#time");
   let iconElement = document.querySelector("#icon");
 
   celsiusTemperature = response.data.main.temp;
@@ -89,6 +111,7 @@ function showData(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   descriptionElement.innerHTML = response.data.weather[0].description;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  timeElement.innerHTML = formatTime(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
